@@ -178,9 +178,8 @@
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
                             <?php 
-                        date_default_timezone_set('Asia/Kolkata');
-
-                        $date = date('Y-m-d');
+                        date_default_timezone_set('Europe/Paris');
+                        $date = date('d-m-Y');
                         echo $date;
                         ?>
                         </p>

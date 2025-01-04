@@ -1,3 +1,27 @@
+<?php
+
+//learn from w3schools.com
+
+session_start();
+
+if(isset($_SESSION["user"])){
+    if(($_SESSION["user"])=="" or $_SESSION['usertype']!='a'){
+        //header("location: ../login.php");
+    }else{
+        $useremail=$_SESSION["user"];
+    }
+
+}else{
+    header("location: ../login.php");
+}
+
+
+
+//import database
+include("../connection.php");
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,30 +43,7 @@
 </style>
 </head>
 <body>
-    <?php
-
-    //learn from w3schools.com
-
-    session_start();
-
-    if(isset($_SESSION["user"])){
-        if(($_SESSION["user"])=="" or $_SESSION['usertype']!='a'){
-            //header("location: ../login.php");
-        }else{
-            $useremail=$_SESSION["user"];
-        }
-
-    }else{
-        header("location: ../login.php");
-    }
-    
-    
-
-    //import database
-    include("../connection.php");
-
-    
-    ?>
+   
     <div class="container">
         <div class="menu">
             <table class="menu-container" border="0">
@@ -134,9 +135,8 @@
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
                             <?php 
-                        date_default_timezone_set('Asia/Kolkata');
-
-                        $date = date('Y-m-d');
+                        date_default_timezone_set('Europe/Paris');
+                        $date = date('d-m-Y');
                         echo $date;
                         ?>
                         </p>

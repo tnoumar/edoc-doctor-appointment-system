@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/animations.css">  
-    <link rel="stylesheet" href="css/main.css">  
-    <link rel="stylesheet" href="css/signup.css">
-        
-    <title>Create Account</title>
-    <style>
-        .container{
-            animation: transitionIn-X 0.5s;
-        }
-    </style>
-</head>
-<body>
 <?php
-
+session_start();
 //learn from w3schools.com
 //Unset all the server side variables
 
-session_start();
 
 $_SESSION["user"]="";
 $_SESSION["usertype"]="";
@@ -88,11 +69,28 @@ if($_POST){
     //header('location: signup.php');
     $error='<label for="promter" class="form-label"></label>';
 }
-
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/animations.css">  
+    <link rel="stylesheet" href="css/main.css">  
+    <link rel="stylesheet" href="css/signup.css">
+        
+    <title>Create Account</title>
+    <style>
+        .container{
+            animation: transitionIn-X 0.5s;
+        }
+    </style>
+</head>
+<body>
 
 
-    <center>
+<center>
     <div class="container">
         <table border="0" style="width: 69%;">
             <tr>

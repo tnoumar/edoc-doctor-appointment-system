@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+// Process form submission before any HTML output
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Example form processing
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $address = $_POST['address'];
+    $nic = $_POST['nic'];
+    $dob = $_POST['dob'];
+
+    // Perform necessary actions, e.g., save to database
+    // print_r($_SESSION["personal"]); // Added missing semicolon
+
+    // Redirect to another page after processing
+    header("Location: create-account.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,40 +37,14 @@
 //learn from w3schools.com
 //Unset all the server side variables
 
-session_start();
-
-$_SESSION["user"]="";
-$_SESSION["usertype"]="";
+$_SESSION["user"] = "";
+$_SESSION["usertype"] = "";
 
 // Set the new timezone
-date_default_timezone_set('Asia/Kolkata');
-$date = date('Y-m-d');
+date_default_timezone_set('Europe/Paris');
+$date = date('d-m-Y');
 
-$_SESSION["date"]=$date;
-
-
-
-if($_POST){
-
-    
-
-    $_SESSION["personal"]=array(
-        'fname'=>$_POST['fname'],
-        'lname'=>$_POST['lname'],
-        'address'=>$_POST['address'],
-        'nic'=>$_POST['nic'],
-        'dob'=>$_POST['dob']
-    );
-
-
-    print_r($_SESSION["personal"]);
-    header("location: create-account.php");
-
-
-
-
-}
-
+$_SESSION["date"] = $date;
 ?>
 
 
